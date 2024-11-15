@@ -1,0 +1,34 @@
+{
+  imports = [
+    ../../home/browser/chromium/chrome.nix
+    ../../home/browser/chromium/google.nix
+    ../../home/browser/chromium/ungoogled.nix
+    ../../home/browser/firefox/default.nix
+    ../../home/browser/firefox/beta.nix
+    ../../home/browser/firefox/dev.nix
+    ../../home/browser/firefox/esr.nix
+    #../../home/browser/firefox/nightly.nix
+    ../../home/dev/editor/jetbrains.nix
+    ../../home/dev/editor/vscode.nix
+    ../../home/dev/editor/zed.nix
+    ../../home/media/celluloid.nix
+    ../../home/media/mpv.nix
+    ../../home/media/obs-studio.nix
+    ../../home/media/spotify.nix
+    ../../home/media/vlc.nix
+    ../../home/media/tools/audacity.nix
+    ../../home/media/tools/blender.nix
+    ../../home/media/tools/gimp.nix
+    ../../home/media/tools/inkscape.nix
+    ../../home/media/tools/kdenlive.nix
+    ../../home/media/tools/krita.nix
+    ../../home/media/tools/musescore.nix
+    ../../home/productivity/anki.nix
+    ../../home/productivity/libreoffice.nix
+    ../../home/social/discord.nix
+    ../../home/social/telegram.nix
+    ../../home/utilities/remmina.nix
+
+    ../../home/environment/qt.nix
+  ];
+}
