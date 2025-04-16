@@ -1,0 +1,21 @@
+set dotenv-load
+
+host-name := env_var_or_default('HOST_NAME', '')
+
+# switch NixOS configuration.
+@switch $hostname=host-name: update-common
+    echo "Switching $hostname"
+    sudo sh -c "nixos-rebuild switch --flake .#$hostname --verbose --show-trace --log-format internal-json |& nom --json"
+
+@switch-remotebuild $hostname=host-name: update-common
+    echo "Switching $hostname"
+    sudo sh -c "nixos-rebuild switch --flake .#$hostname --verbose --show-trace --build-host nixos@kimjang-nixos"
+
+@switch-raw $hostname=host-name: update-common
+    sudo nixos-rebuild switch --flake .#$hostname --verbose
+
+@update:
+    nix flake update
+
+@update-common:
+    nix flake update common

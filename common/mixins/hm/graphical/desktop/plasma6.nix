@@ -1,0 +1,3 @@
+# inherits from mixins/nixos/...
+
+{ pkgs, ... }: { home.packages = [  ]; programs.firefox.nativeMessagingHosts = [ pkgs.kdePackages.plasma-browser-integration ]; }
