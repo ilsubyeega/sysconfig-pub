@@ -1,3 +1,0 @@
-{ pkgs, ... }: { home.packages = [ pkgs.yt-dlp ]; }
-
-# Todo: create custom aliases; makes high quality etc....

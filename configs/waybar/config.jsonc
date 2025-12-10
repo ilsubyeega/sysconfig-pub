@@ -1,0 +1,126 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 12,
+  "spacing": 0,
+  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "idle_inhibitor",
+    "cpu",
+    "memory",
+    "backlight",
+    "network",
+    "power-profiles-daemon",
+    "battery",
+    "wireplumber",
+    "tray",
+    "privacy",
+  ],
+  "niri/window": {
+    "icon": false,
+  },
+  "tray": {
+    "icon-size": 12,
+    "spacing": 6,
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "CPU {usage:0>2}%",
+  },
+  "memory": {
+    "interval": 1,
+    "format": "MEM {used:0.1f}G/{total:0.1f}G",
+  },
+  "wireplumber": {
+    "format": "VOL {volume}",
+    "format-muted": "MUTED",
+    "on-click": "pwvucontrol",
+    "on-click-right": "swayosd-client --output-volume=mute-toggle",
+    "on-click-middle": "helvum",
+    "max-volume": 150,
+  },
+  "privacy": {
+    "icon-spacing": 0,
+    "icon-size": 12,
+    "transition-duration": 250,
+    "modules": [
+      {
+        "type": "screenshare",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-out",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+      {
+        "type": "audio-in",
+        "tooltip": true,
+        "tooltip-icon-size": 24,
+      },
+    ],
+  },
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "WIFI {essid} ({signalStrength}%)",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "format-disconnected": "DISCONNECTED",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Network Disconnected",
+    "max-length": 50,
+  },
+  "clock": {
+    "format": "{:%H:%M:%S (%a, %F)}",
+    "interval": 1,
+    "format-alt": "{:%H:%M:%S}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b> {}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+  "power-profiles-daemon": {
+    "format-icons": {
+      "default": "DEF",
+      "performance": "PERF",
+      "balanced": "BAL",
+      "power-saver": "ECO",
+    },
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "NOIDLE",
+      "deactivated": "CANIDLE",
+    },
+  },
+  "battery": {
+    "interval": 1,
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "BAT {capacity}",
+  },
+  "backlight": {
+    "format": "BACKLIGHT {percent}%",
+  },
+}

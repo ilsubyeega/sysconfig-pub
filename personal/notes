@@ -1,9 +1,0 @@
-- https://github.com/NixOS/nixpkgs/issues/126590
-    Excessively long environment variables in kde plasma #126590
-- https://github.com/NixOS/nixpkgs/issues/21345
-    KDE 5 applications are slow
-- https://github.com/NixOS/nixpkgs/pull/54525
-     Wrap Qt applications #54525
-     > (Actually, applications that use OpenGL on NixOS cannot run from pure Nix shells because of Mesa;
-     > this is solved by setting LD_LIBRARY_PATH for the OpenGL drivers. I did not address this here because it is not a Qt problem.)
-     
